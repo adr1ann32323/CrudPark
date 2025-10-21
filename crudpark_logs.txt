@@ -1,0 +1,2 @@
+[2025-10-21 12:02:53] [Adrian Arboleda] [INGRESO] Vehículo placa AXY012 ingresó al parqueadero.
+[2025-10-21 12:03:24] [1] [SALIDA] Vehículo placa XXX000 salió. Total cobrado: $ 46000
