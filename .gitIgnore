@@ -1,0 +1,12 @@
+application.properties
+*.log
+target/
+.idea/
+.DS_Store
+*.class
+*.jar
+*.ear
+node_modules/
+dist/
+.vscode/
+.env

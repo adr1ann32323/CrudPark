@@ -22,12 +22,22 @@ public class LoginView {
             dialog.setLocationRelativeTo(null);
             dialog.setLayout(new BorderLayout());
 
-            // --- Imagen de fondo escalable ---
-            ImageIcon bgIcon = new ImageIcon("src/main/resources/crudpark.png");
-            Image scaledImg = bgIcon.getImage().getScaledInstance(dialog.getWidth(), dialog.getHeight(), Image.SCALE_SMOOTH);
+            // --- Imagen de fondo escalable (desde recursos del classpath) ---
+            ImageIcon bgIcon;
+            try {
+                // Cargar desde el classpath (dentro del .jar)
+                bgIcon = new ImageIcon(LoginView.class.getResource("/images/crudpark.png"));
+            } catch (Exception e) {
+                System.err.println("No se pudo cargar la imagen de fondo: " + e.getMessage());
+                bgIcon = new ImageIcon(); // Imagen vacía si falla
+            }
+
+// Escalar imagen al tamaño de la ventana
+            Image scaledImg = bgIcon.getImage().getScaledInstance(500, 350, Image.SCALE_SMOOTH);
             JLabel background = new JLabel(new ImageIcon(scaledImg));
             background.setLayout(new BorderLayout());
             dialog.setContentPane(background);
+
 
             // --- Panel transparente encima ---
             JPanel panel = new JPanel();

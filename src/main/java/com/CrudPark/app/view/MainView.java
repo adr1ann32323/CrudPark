@@ -14,7 +14,6 @@ public class MainView {
         Operator operador = LoginView.showLogin();
 
         if (operador == null) {
-            JOptionPane.showMessageDialog(null, "❌ Sesión no iniciada. Cerrando aplicación.");
             return;
         }
 
